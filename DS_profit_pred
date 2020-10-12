@@ -1,1 +1,29 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
 
+data=pd.read_csv('c:/users/sunai/desktop/groceries.csv')
+
+data
+data.describe()
+sns.relplot(x='Member_number', y='itemDescription', data =data)
+plt.bar(data['itemDescription'].value_counts().keys().tolist(), data['itemDescription'].value_counts().tolist())
+plt.hist(data['Member_number'], bins=30, color='green')
+data.boxplot(column=['Member_number'], by=['itemDescription'])
+plt.bar(data['Member_number'].value_counts().keys().tolist(), data['Member_number'].value_counts().tolist())
+plt.xlabel('member numbers')
+plt.ylabel('count of items')
+plt.title('item distribution for members')
+
+from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+y=data['itemDescription']
+x=data['Member_number']
+y.head(), x.head()
+x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.3, random_state=0)
+regressor=LinearRegression()
+regressor.fit(x_train, y_train)
+y_pred=regressor.predict(x_test)
+from sklearn.metrics import mean_squared_error
+np.sqrt(mean_squared_error(y_test, y_pred))
