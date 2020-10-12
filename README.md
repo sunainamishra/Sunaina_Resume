@@ -5,3 +5,5 @@ Data Science projects
 - Analyzed pattern for items sold for each member
 - Used bar plot, box plot, histpgram to visualize the data
 - Applied linear regression to fit the model and predict the items that are most likely to be profitable
+
+![](https://github.com/sunainamishra/Sunaina_Resume/blob/main/item_pred.png)
