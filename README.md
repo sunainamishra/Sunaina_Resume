@@ -8,6 +8,6 @@ Data Science projects
 
 ![](https://github.com/sunainamishra/Sunaina_Resume/blob/main/item_pred.png)
 
-#[Project 2: ICC World Cup Analysis]
+#[Project 2: ICC World Cup Analysis](https://github.com/sunainamishra/Sunaina_Resume/blob/main/DS_ICC_WC_Analysis)
 - Analyzed winning and loosing patterns for India vs opposition
 - Used bar plot and pie chart for visualizing the data
