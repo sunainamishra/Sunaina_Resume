@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+match=pd.read_csv(r"C:\Users\sunai\Desktop\Sunaina\DS Datasets\Cricket world cup 2019\ODI_Match_Results.csv")
+match.head(10)
+
+India_played=match[match['Country']=='India']
+India_played
+
+India_won=India_played[India_played['Result']=='won']
+India_won
+
+India_won['Opposition'].value_counts()
+plt.bar(India_won['Opposition'].value_counts()[0:5].keys(),India_won['Opposition'].value_counts()[0:5] )
+plt.xlabel('Opposition Countries')
+plt.ylabel('No of Matches')
+plt.title('India winning analysis')
+
+India_played
+
+India_lost=India_played[India_played['Result']=='lost']
+India_lost.head(10)
+India_lost['Opposition'].value_counts()
+
+plt.bar(India_lost['Opposition'].value_counts()[0:5].keys(),India_lost['Opposition'].value_counts()[0:5])
+plt.xlabel('Opposition Countries')
+plt.ylabel('No of Matches')
+plt.title('India Loosing Analysis')
+
+plt.pie(list(India_lost['Opposition'].value_counts()[0:5]),labels=list(India_lost['Opposition'].value_counts()[0:5].keys()), autopct='%0.1f%%')
